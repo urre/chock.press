@@ -2,11 +2,11 @@
 
 Having fun with Swedish evening news.
 
-## Scraping
+## Scraping and matching
 
     npm run scrape
 
-For scraping headings on aftonbladet.se and expressen.se.
+For scraping and matching headings on aftonbladet.se and expressen.se.
 
 ## Develop
 
