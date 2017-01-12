@@ -56,6 +56,10 @@ li a {
 	color: #666;
 }
 
+li a:first-letter {
+    text-transform: uppercase;
+}
+
 li a:hover {
 	background: #fafafa;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import axios from 'axios';
 import markjs from 'mark.js/dist/mark.js';
+import series from 'async-series';
 import ExpressenLogo from '-!babel!svg-react!../../build/images/logo-e.svg';
 
 class Expressen extends Component {
@@ -35,9 +36,9 @@ class Expressen extends Component {
         var elements = document.querySelectorAll('li a');
         Array.prototype.forEach.call(elements, function(el, i) {
           for (var i = 0; i < words.length; i++) {
-            if (el.innerHTML.indexOf(words[i].replace(/[0-9]/g, ''))) {
+            if (el.innerHTML.indexOf(words[i])) {
               var instance = new Mark(document.querySelector(".articles--expressen"));
-              instance.mark(words[i].replace(/[0-9]/g, ''), {
+              instance.mark(words[i], {
                 "accuracy": "complementary"
               });
             }

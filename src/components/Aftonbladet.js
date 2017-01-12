@@ -35,9 +35,9 @@ class Aftonbladet extends Component {
         var elements = document.querySelectorAll('li a');
         Array.prototype.forEach.call(elements, function(el, i) {
           for (var i = 0; i < words.length; i++) {
-            if (el.innerHTML.indexOf(words[i].replace(/[0-9]/g, ''))) {
+            if (el.innerHTML.indexOf(words[i])) {
               var instance = new Mark(document.querySelector('.articles--aftonbladet'));
-              instance.mark(words[i].replace(/[0-9]/g, ''), {
+              instance.mark(words[i], {
                 "accuracy": "complementary"
               });
             }
