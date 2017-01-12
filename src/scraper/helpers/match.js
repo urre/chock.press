@@ -15,7 +15,7 @@ const match = (source) => {
     obj = _(source == 'aftonbladet' ? aftonbladet : expressen)
       .filter(function(s) {
         if (s.title) {
-          // s.title = clean(s.title);
+          s.title = clean(s.title);
           return JSON.stringify(s).includes(val)
         }
       }).value();
