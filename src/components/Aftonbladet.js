@@ -14,7 +14,6 @@ class Aftonbladet extends Component {
   }
   componentDidMount() {
     this.getArticles();
-    this.markWords();
   }
   getArticles() {
     const url = '../../data/af.json';
@@ -26,6 +25,7 @@ class Aftonbladet extends Component {
       })
       .then(() => {
         document.querySelector('.articles--aftonbladet').classList.remove('loading');
+        this.markWords();
       })
   }
   markWords(title) {

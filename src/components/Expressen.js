@@ -15,7 +15,6 @@ class Expressen extends Component {
   }
   componentDidMount() {
     this.getArticles();
-    this.markWords();
   }
   getArticles() {
     const url = '../../data/ex.json';
@@ -27,6 +26,7 @@ class Expressen extends Component {
       })
       .then(() => {
         document.querySelector('.articles--expressen').classList.remove('loading');
+        this.markWords();
       })
   }
   markWords(title) {
