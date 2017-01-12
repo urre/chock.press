@@ -2,3 +2,4 @@ node_modules
 credentials.json
 build
 main.css.map
+sendtogoogle.js
