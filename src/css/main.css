@@ -1,24 +1,17 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	margin: 0;
+html {
 	font-size: 1rem;
 	font-weight: 400;
+}
+
+@media (min-width: 600px) {
+	html {
+		font-size: 1.25rem;
+	}
 }
 
 a {
 	text-decoration: none;
 	color: inherit;
-}
-
-* {
-	margin: 0;
-	padding: 0;
 }
 
 html {
@@ -27,7 +20,7 @@ html {
 }
 
 body {
-	min-height: 100vh;
+	height: 100vh;
 	font-size: 100%;
 	font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
 	line-height: 1.5;
