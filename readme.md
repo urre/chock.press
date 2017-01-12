@@ -1,17 +1,31 @@
-# [Chock.press](https://chock.press)
+## [Chock.press](https://chock.press) 📰
 
-Having fun with Swedish evening news.
+Having fun with Swedish evening news. The latest shocking headlines from Aftonbladet and Expressen.
 
-## Scraping and matching
+### Scraping and matching
 
     npm run scrape
 
-For scraping and matching headings on aftonbladet.se and expressen.se.
+For scraping and matching news headings.
 
-## Develop
+### Run
 
     npm start
 
-## Build
+Starts Webpack dev server at [localhost:8080](http://localhost:8080).
+
+### Build for production
 
     npm run build
+
+Outputs to `/build`
+
+***
+
+### Details
+
++ Scraper: Built using vanilla JavaScript written in ES6
++ Website: React.
+
+Visit [Chock.press](https://chock.press)
+Hosted on [Surge](https://surge.sh)
