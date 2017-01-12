@@ -7,7 +7,6 @@ const postcssImport = require('postcss-import');
 const postcssUrl = require('postcss-url');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [
     './src/index',
   ],
