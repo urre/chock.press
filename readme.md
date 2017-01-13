@@ -24,7 +24,7 @@ Outputs to `/build`
 
 ### Details
 
-+ Scraper: Built using vanilla JavaScript written in ES6
++ Scraper: Built using Node and vanilla JavaScript written in ES6.
 + Website: Built using React.
 + Hosted on [Surge](https://surge.sh)
 

@@ -3,6 +3,7 @@ const FOURTYPLUS = '40PLUS'
 const NUMBER = /[0-9]/g
 const PLUS = 'PLUS'
 const COLONDASH = ':-'
+const TRAILINGNUMBERS = /\d+$/
 const HOJDARE = 'TV-HÖJDAREN'
 const TV = 'TVTV'
 const EXCLAMATION = /!/g
@@ -16,9 +17,9 @@ const clean = (str) => {
     .replace(PLUS, '. ')
     .replace(JUSTNU, '')
     .replace(HOJDARE, '')
+    .replace(TRAILINGNUMBERS, '')
     .replace(TV, '')
     .replace(EXCLAMATION, '! ')
-    .replace(NUMBER, '')
     .replace(COLONDASH, '')
     .replace(CAPITALLETTERSPACE, '$1 $2')
 }
