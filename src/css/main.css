@@ -146,10 +146,12 @@ Start App
 	padding: 2rem;
 	font-size: .85rem;
 	text-align: center;
+	color: #ddd;
 }
 
 .footer a {
 	color: #ddd;
+	transition: all 300ms ease-in-out;
 }
 
 .footer a:hover {

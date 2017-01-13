@@ -7,6 +7,7 @@ const sites = [
   'http://www.aftonbladet.se/nojesbladet/',
   'http://www.expressen.se',
   'http://www.expressen.se/noje/',
+  'http://www.expressen.se/kvallsposten',
 ];
 
 const scrapeTitles = () => {
