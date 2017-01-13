@@ -12,7 +12,7 @@ const scrapeTitles = () => {
 
   sites.forEach((urls, index) => {
     x(urls, 'a', [{
-      title: '',
+      title: 'h3',
       url: '@href',
     }])(function(err, obj) {
       if (urls.includes('aftonbladet')) {

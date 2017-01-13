@@ -33,11 +33,11 @@ class Expressen extends Component {
     axios.get('../../data/words.json')
       .then(function(res) {
         const words = res.data;
-        var elements = document.querySelectorAll('li a');
+        const elements = document.querySelectorAll('li a');
         Array.prototype.forEach.call(elements, function(el, i) {
-          for (var i = 0; i < words.length; i++) {
+          for (let i = 0; i < words.length; i++) {
             if (el.innerHTML.indexOf(words[i])) {
-              var instance = new Mark(document.querySelector(".articles--expressen"));
+              const instance = new Mark(document.querySelector(".articles--expressen"));
               instance.mark(words[i], {
                 "accuracy": "complementary"
               });
