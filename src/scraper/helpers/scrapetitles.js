@@ -4,8 +4,9 @@ import fs from 'fs';
 const x = Xray();
 
 const sites = [
-  'https://aftonbladet.se',
-  'http://www.expressen.se'
+  'http://www.aftonbladet.se/nojesbladet/',
+  'http://www.expressen.se',
+  'http://www.expressen.se/noje/',
 ];
 
 const scrapeTitles = () => {
