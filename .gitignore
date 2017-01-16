@@ -3,3 +3,4 @@ credentials.json
 build
 main.css.map
 sendtogoogle.js
+purge.sh

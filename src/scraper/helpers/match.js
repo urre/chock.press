@@ -16,7 +16,7 @@ const match = (source) => {
       .filter(function(s) {
         if (s.title) {
           s.title = clean(s.title);
-          return JSON.stringify(s).includes(val)
+          return JSON.stringify(s.title).includes(val)
         }
       }).value();
     results = results.concat(obj);

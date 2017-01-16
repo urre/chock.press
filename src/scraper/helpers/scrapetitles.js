@@ -8,6 +8,8 @@ const sites = [
   'http://www.expressen.se',
   'http://www.expressen.se/noje/',
   'http://www.expressen.se/kvallsposten',
+  'http://www.expressen.se/halsoliv/sex--relationer/',
+  'http://www.expressen.se/halsoliv/skonhet-1/'
 ];
 
 const scrapeTitles = () => {

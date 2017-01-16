@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
     "scrape": "cd src/scraper && babel-node index.js && cd ../../ && cp -R ./src/data/ build/data",
-    "deploy": "npm run build && cp -R ./src/data/ build/data && surge ./build chock.press && npm run send",
+    "deploy": "npm run build && cp -R ./src/data/ build/data && surge ./build chock.press && bash purge.sh && npm run send",
     "send": "cd src/scraper/helpers/ && babel-node sendtogoogle.js"
   },
   "devDependencies": {
