@@ -16,13 +16,13 @@ const match = (source) => {
       .filter(function(s) {
         if (s.title) {
           s.title = clean(s.title);
-          return JSON.stringify(s.title).includes(val)
+          return JSON.stringify(s).includes(val)
         }
       }).value();
     results = results.concat(obj);
   });
 
-  fs.writeFileSync(`../data/${source.substring(0,2)}.json`, JSON.stringify(results), 'utf-8');
+  fs.writeFileSync(`../data/${source.substring(0,2)}.json`, JSON.stringify(_.uniq(results)), 'utf-8');
 
 }
 

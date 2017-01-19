@@ -4,12 +4,14 @@ import fs from 'fs';
 const x = Xray();
 
 const sites = [
-  'http://www.aftonbladet.se/nojesbladet/',
-  'http://www.expressen.se',
-  'http://www.expressen.se/noje/',
-  'http://www.expressen.se/kvallsposten',
-  'http://www.expressen.se/halsoliv/sex--relationer/',
-  'http://www.expressen.se/halsoliv/skonhet-1/'
+  'http://www.aftonbladet.se/',
+'http://www.aftonbladet.se/nojesbladet/',
+'http://www.aftonbladet.se/relationer',
+'http://www.expressen.se',
+'http://www.expressen.se/noje/',
+'http://www.expressen.se/kvallsposten',
+'http://www.expressen.se/halsoliv/sex--relationer/',
+'http://www.expressen.se/halsoliv/skonhet-1/'
 ];
 
 const scrapeTitles = () => {

@@ -4,3 +4,5 @@ build
 main.css.map
 sendtogoogle.js
 purge.sh
+aftonbladet.json
+expressen.json
