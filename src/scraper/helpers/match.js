@@ -20,6 +20,7 @@ const match = (source) => {
         }
       }).value();
     results = results.concat(obj);
+
   });
 
   fs.writeFileSync(`../data/${source.substring(0,2)}.json`, JSON.stringify(_.uniq(results)), 'utf-8');

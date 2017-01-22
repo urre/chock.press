@@ -7,6 +7,8 @@ const sites = [
   'http://www.aftonbladet.se/',
   'http://www.aftonbladet.se/nojesbladet/',
   'http://www.aftonbladet.se/relationer',
+  'http://www.aftonbladet.se/tagg/66ee63ad-5d18-4fe4-b2e1-7fcbd9adbc95',
+  'http://www.aftonbladet.se/nojesbladet/idol/',
   'http://www.expressen.se',
   'http://www.expressen.se/noje/',
   'http://www.expressen.se/kvallsposten',
@@ -14,9 +16,20 @@ const sites = [
   'http://www.expressen.se/halsoliv/skonhet-1/'
 ];
 
+Array.prototype.delayedForEach = function(callback, timeout, thisArg) {
+var i = 0,
+  l = this.length,
+  self = this,
+  caller = function() {
+    callback.call(thisArg || self, self[i], i, self);
+    (++i < l) && setTimeout(caller, timeout);
+  };
+caller();
+};
+
 const scrapeTitles = () => {
 
-  sites.forEach((urls, index) => {
+  sites.delayedForEach((urls, index) => {
     x(urls, 'a', [{
       title: '',
       url: '@href',
@@ -28,7 +41,7 @@ const scrapeTitles = () => {
       }
 
     })
-  })
+  }, 2000)
 
 }
 
