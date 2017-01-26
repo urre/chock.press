@@ -34,9 +34,6 @@ module.exports = {
   ],
   postcss: function(webpack) {
     return [
-      postcssImport({
-        addDependencyTo: webpack
-      }),
       postcssUrl(),
       autoprefixer({
         browsers: ['last 2 versions']
