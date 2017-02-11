@@ -49,23 +49,24 @@ class Expressen extends Component {
   }
   renderArticle() {
     return this.state.articles.map((article, index) => {
-      return (<li key={ index }>
-                <a href={ article.url }>
-                  { article.title }
+      return (<li key={index}>
+                <a href={article.url.includes('expressen') ? article.url : `http://expressen.se${article.url}`}>
+                  {article.title}
                 </a>
               </li>);
     });
   }
   render() {
     return (
-      <section className="col col__expressen">
-        <div className="col__logo">
+      <section className='col col__expressen'>
+        <div className='logo'>
           <ExpressenLogo className='normal' />
-          <ul className="articles articles--expressen loading">
-            { this.renderArticle() }
-            { this.props.children }
-          </ul>
+          <span className='count'>{this.state.articles.length}</span>
         </div>
+        <ul className='articles articles--expressen loading'>
+          {this.renderArticle()}
+          {this.props.children}
+        </ul>
       </section>
       );
   }

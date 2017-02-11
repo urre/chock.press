@@ -48,23 +48,24 @@ class Aftonbladet extends Component {
   }
   renderArticle() {
     return this.state.articles.map((article, index) => {
-      return (<li key={ index }>
-                <a href={ article.url }>
-                  { article.title }
+      return (<li key={index}>
+                <a href={article.url.includes('aftonbladet') ? article.url : `http://aftonbladet.se${article.url}`}>
+                  {article.title}
                 </a>
               </li>);
     });
   }
   render() {
     return (
-      <section className="col col__aftonbladet">
-        <div className="logo">
+      <section className='col col__aftonbladet'>
+        <div className='logo'>
           <AftonbladetLogo className='normal' />
-          <ul className="articles articles--aftonbladet loading">
-            { this.renderArticle() }
-            { this.props.children }
-          </ul>
+          <span className='count'>{this.state.articles.length}</span>
         </div>
+        <ul className='articles articles--aftonbladet loading'>
+          {this.renderArticle()}
+          {this.props.children}
+        </ul>
       </section>
       );
   }

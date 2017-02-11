@@ -12,11 +12,14 @@ const match = (source) => {
   let obj;
 
   words.forEach(function(val, index, arr) {
-    obj = _(source == 'aftonbladet' ? aftonbladet : expressen)
+    obj = _(source == 'aftonbladet' ? aftonbladet.articles : expressen.articles)
       .filter(function(s) {
         if (s.title) {
           s.title = clean(s.title);
-          return JSON.stringify(s).includes(val)
+          if (s.title.includes(val) && s.url) {
+            console.log('👍 ' + source + ': ' + s.title);
+            return JSON.stringify(s)
+          }
         }
       }).value();
     results = results.concat(obj);
