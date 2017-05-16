@@ -1,13 +1,13 @@
 import chalk from 'chalk'
 import fs from 'fs'
 import scrapeIt from 'scrape-it'
+import _ from 'lodash'
 
 const sites = [
-  "http://www.aftonbladet.se/",
-  "http://www.aftonbladet.se/nojesbladet/",
-  "http://www.aftonbladet.se/relationer",
-  "http://www.aftonbladet.se/tagg/66ee63ad-5d18-4fe4-b2e1-7fcbd9adbc95",
-  "http://www.aftonbladet.se/nojesbladet/idol/"
+  "http://www.aftonbladet.se",
+  // "http://www.aftonbladet.se/nojesbladet/",
+  // "http://www.aftonbladet.se/relationer",
+  // "http://www.aftonbladet.se/nojesbladet/idol/"
 ];
 
 Array.prototype.delayedForEach = function(callback, timeout, thisArg) {
@@ -25,25 +25,23 @@ const scrapeAftonbladet = () => {
 
   sites.delayedForEach((urls, index) => {
 
-
     scrapeIt(urls, {
       articles: {
-        listItem: '.abItemHLine',
+        listItem: 'article',
         data: {
           title: 'h2',
           url: {
-            selector: 'a',
+            selector: '.abBlock',
             attr: 'href'
           }
         }
       }
 
     }).then(page => {
-      // console.log(page);
       fs.writeFileSync('../../src/data/aftonbladet.json', JSON.stringify(page), 'utf-8');
     });
 
-  }, 5000);
+  }, 2000);
 
 }
 

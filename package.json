@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "scrape": "cd src/scraper && babel-node scrape.js && babel-node match.js  && cd ../../ && cp -R ./src/data/ build/data",
     "deploy": "npm run build && npm run scrape && cp -R ./src/data/ build/data && surge ./build chock.press && bash purge.sh && npm run send",
     "send": "cd src/scraper/helpers/ && babel-node sendtogoogle.js"
@@ -41,6 +41,7 @@
     "lodash": "^4.17.3",
     "mark.js": "github:julmot/mark.js",
     "npm": "^4.1.1",
+    "optimize-css-assets-webpack-plugin": "^1.3.0",
     "postcss-import": "^9.0.0",
     "postcss-loader": "^1.2.1",
     "postcss-url": "^5.1.2",

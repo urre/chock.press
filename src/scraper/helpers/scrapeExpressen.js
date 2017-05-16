@@ -1,12 +1,16 @@
 import chalk from 'chalk'
 import fs from 'fs'
 import scrapeIt from 'scrape-it'
+import _ from 'lodash'
 
 const sites = [
   "http://www.expressen.se",
   "http://www.expressen.se/kultur/",
   "http://www.expressen.se/ledare/",
   "http://www.expressen.se/noje/",
+  "http://www.expressen.se/noje/melodifestivalen/",
+  "http://www.expressen.se/noje/livshjulet-med-anna-hegestrand/",
+  "http://www.expressen.se/halsoliv/",
   "http://www.expressen.se/kvallsposten"
 ];
 
@@ -27,9 +31,9 @@ const scrapeExpressen = () => {
 
     scrapeIt(urls, {
       articles: {
-        listItem: 'article',
+        listItem: '.b-adv-teaser__row',
         data: {
-          title: 'h2',
+          title: '.b-adv-teaser__headline',
           url: {
             selector: 'a',
             attr: 'href'
@@ -38,7 +42,7 @@ const scrapeExpressen = () => {
       }
 
     }).then(page => {
-      // console.log(page);
+      console.log(page);
       fs.writeFileSync('../../src/data/expressen.json', JSON.stringify(page), 'utf-8');
     });
 
