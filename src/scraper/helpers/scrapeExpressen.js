@@ -4,14 +4,15 @@ import scrapeIt from 'scrape-it'
 import _ from 'lodash'
 
 const sites = [
-  "http://www.expressen.se",
-  "http://www.expressen.se/kultur/",
-  "http://www.expressen.se/ledare/",
-  "http://www.expressen.se/noje/",
-  "http://www.expressen.se/noje/melodifestivalen/",
-  "http://www.expressen.se/noje/livshjulet-med-anna-hegestrand/",
-  "http://www.expressen.se/halsoliv/",
-  "http://www.expressen.se/kvallsposten"
+  "http://www.expressen.se"
+  // "http://www.expressen.se/kultur/",
+  // "http://www.expressen.se/ledare/",
+  // "http://www.expressen.se/noje/",
+  // "http://www.expressen.se/halsoliv/",
+  // "http://www.expressen.se/kvallsposten",
+  // "http://www.expressen.se/noje/eurovision/",
+  // "http://www.expressen.se/noje/lets-dance/",
+  // "http://www.expressen.se/kultur/ungkultur/"
 ];
 
 Array.prototype.delayedForEach = function(callback, timeout, thisArg) {
@@ -31,9 +32,9 @@ const scrapeExpressen = () => {
 
     scrapeIt(urls, {
       articles: {
-        listItem: '.b-adv-teaser__row',
+        listItem: '.b-ateaser',
         data: {
-          title: '.b-adv-teaser__headline',
+          title: '.teaser-component',
           url: {
             selector: 'a',
             attr: 'href'
@@ -42,7 +43,7 @@ const scrapeExpressen = () => {
       }
 
     }).then(page => {
-      console.log(page);
+      // console.log(page);
       fs.writeFileSync('../../src/data/expressen.json', JSON.stringify(page), 'utf-8');
     });
 

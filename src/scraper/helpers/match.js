@@ -6,6 +6,18 @@ import words from './../../data/words.json';
 import aftonbladet from './../../data/aftonbladet.json';
 import expressen from './../../data/expressen.json';
 
+function multiDimensionalUnique(arr) {
+    var uniques = [];
+    var itemsFound = {};
+    for(var i = 0, l = arr.length; i < l; i++) {
+        var stringified = JSON.stringify(arr[i]);
+        if(itemsFound[stringified]) { continue; }
+        uniques.push(arr[i]);
+        itemsFound[stringified] = true;
+    }
+    return uniques;
+}
+
 const match = (source) => {
 
   let results = [];
@@ -16,7 +28,7 @@ const match = (source) => {
       .filter(function(s) {
         if (s.title) {
           s.title = clean(s.title);
-          if (s.title.includes(val) && s.url) {
+          if (s.title.includes(val) && s.url && s.title.length < 200) {
             console.log('👍 ' + source + ': ' + s.title);
             return JSON.stringify(s)
           }
@@ -26,7 +38,9 @@ const match = (source) => {
 
   });
 
-  fs.writeFileSync(`../data/${source.substring(0,2)}.json`, JSON.stringify(_.uniq(results)), 'utf-8');
+  var unique = multiDimensionalUnique(results);
+
+  fs.writeFileSync(`../data/${source.substring(0,2)}.json`, JSON.stringify(unique), 'utf-8');
 
 }
 

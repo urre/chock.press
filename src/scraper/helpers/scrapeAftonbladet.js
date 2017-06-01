@@ -5,9 +5,7 @@ import _ from 'lodash'
 
 const sites = [
   "http://www.aftonbladet.se",
-  // "http://www.aftonbladet.se/nojesbladet/",
-  // "http://www.aftonbladet.se/relationer",
-  // "http://www.aftonbladet.se/nojesbladet/idol/"
+  "http://www.aftonbladet.se/nojesbladet"
 ];
 
 Array.prototype.delayedForEach = function(callback, timeout, thisArg) {
@@ -24,20 +22,19 @@ Array.prototype.delayedForEach = function(callback, timeout, thisArg) {
 const scrapeAftonbladet = () => {
 
   sites.delayedForEach((urls, index) => {
-
     scrapeIt(urls, {
       articles: {
-        listItem: 'article',
+        listItem: urls.includes('nojesbladet') ? 'div' : 'article',
         data: {
-          title: 'h2',
+          title: urls.includes('nojesbladet') ? 'h3' : 'h2',
           url: {
-            selector: '.abBlock',
+            selector: 'a',
             attr: 'href'
           }
         }
       }
-
     }).then(page => {
+      // console.log(page);
       fs.writeFileSync('../../src/data/aftonbladet.json', JSON.stringify(page), 'utf-8');
     });
 
