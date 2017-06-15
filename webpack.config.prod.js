@@ -12,14 +12,6 @@ module.exports = {
     './src/index',
   ],
   debug: true,
-  devServer: {
-    contentBase: './src',
-    stats: {
-      colors: true
-    },
-    inline: true,
-    progress: true,
-  },
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
