@@ -27,9 +27,7 @@ module.exports = {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin("[name].css", {
-      allChunks: true
-    }),
+    new ExtractTextPlugin("[name].css"),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.optimize\.css$/g,
       cssProcessor: require('cssnano'),
@@ -60,24 +58,25 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader'
       },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          "style-loader",
-          "css-loader?-autoprefixer!postcss-loader"
-        )
-      },
+
       {
         test: /\.html$/,
         loader: 'raw!html-minify'
       },
       {
+				test: /\.css$/,
+				loader: ExtractTextPlugin.extract(
+					'style-loader',
+					'!css-loader?sourceMap&importLoaders=1!postcss-loader'
+				)
+			},
+      {
         test: /\.(jpe?g|png|gif|svg)$/,
         exclude: /(node_modules)/,
-        loader: 'url-loader?limit=10000'
+        loader: 'url-loader'
       }
     ]
   }
