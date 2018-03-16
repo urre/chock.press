@@ -41,7 +41,7 @@ module.exports = {
 		]
 	},
 	module: {
-		loaders: [
+		loader: [
 			{
 				test: /\.js$/,
 				exclude: /(node_modules)/,

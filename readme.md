@@ -1,4 +1,4 @@
-## [Chock.press](https://chock.press) 📰
+## [Chockpress](https://chockpress.now.sh) 📰
 
 Having fun with Swedish evening news. The latest shocking headlines from Aftonbladet and Expressen.
 
@@ -30,4 +30,4 @@ Test
 + Website: Built using React.
 + Hosted on [Surge](https://surge.sh)
 
-Visit [Chock.press](https://chock.press)
+Visit [Chockpress](https://chockpress.now.sh/)
