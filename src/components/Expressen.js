@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import axios from "axios";
-import markjs from "mark.js/dist/mark.js";
+import Mark from 'mark.js/dist/mark.js';
 import series from "async-series";
-import ExpressenLogo from "-!babel!svg-react!../../build/images/logo-e.svg";
+import ExpressenLogo from './ExpressenLogo';
 
 class Expressen extends Component {
   constructor(props) {
@@ -71,7 +71,7 @@ class Expressen extends Component {
     return (
       <section className="col col__expressen">
         <div className="logo">
-          <ExpressenLogo className="normal" />
+          <ExpressenLogo />
           <span className="count">
             {this.state.articles.length}
           </span>
