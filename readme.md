@@ -4,23 +4,28 @@ Having fun with Swedish evening news. The latest shocking headlines from Aftonbl
 
 ### Scraping and matching
 
-    npm run scrape
+    yarn run scrape
 
 For scraping and matching news headings.
 
 ### Run
 
-    npm start
+    yarn run develop
 
 Starts Webpack dev server at [localhost:8080](http://localhost:8080).
 
 ### Build for production
 
-    npm run build
+    yarn run build
 
-Outputs to `/build`
+### Publish (scrape, build and deploy)
 
-Test
+    yarn run publish
+
+### Deploy
+
+    yarn run deploy
+
 
 ***
 
@@ -28,6 +33,6 @@ Test
 
 + Scraper: Built using Node and vanilla JavaScript written in ES6.
 + Website: Built using React.
-+ Hosted on [Surge](https://surge.sh)
++ Hosted on [Now](https://zeit.co/now)
 
 Visit [Chockpress](https://chockpress.now.sh/)
