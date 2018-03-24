@@ -34,7 +34,7 @@ class Aftonbladet extends Component {
 	markWords(title) {
 		axios.get('../../data/words.json').then(function(res) {
 			const words = res.data
-			const elements = document.querySelectorAll('li a')
+			const elements = document.querySelectorAll('.articles--aftonbladet a')
 			Array.prototype.forEach.call(elements, function(el, i) {
 				for (let i = 0; i < words.length; i++) {
 					if (el.innerHTML.indexOf(words[i])) {
