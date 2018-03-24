@@ -11,12 +11,13 @@
 	},
 	"scripts": {
 		"develop": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
-		"build": "webpack --config ./webpack.config.prod.js --mode production",
+		"build": "NODE_ENV=production webpack --config ./webpack.config.prod.js --mode production",
 		"start": "serve ./build",
 		"scrape": "cd src/scraper && babel-node scrape.js && babel-node match.js  && cd ../../ && cp -R ./src/data/ build/data",
 		"send": "cd src/scraper/helpers/ && babel-node sendtogoogle.js",
-		"now": "now --static --public ./build && now alias",
-		"publish": "clear && npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
+		"clean": "cd ./build && rm -rf *.js && rm -rf index.html",
+		"publish": "clear && npm run clean && npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
+		"now": "cp now.json ./build && cd build && now && now alias && now ls",
 		"deploy": "npm run now"
 	},
 	"devDependencies": {

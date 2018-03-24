@@ -1,11 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import routes from './routes'
 import appreset from 'app-reset'
 import styles from './css/main.css'
 import ReactGA from 'react-ga'
-import App from './components/App';
+import App from './components/App'
 
 ReactGA.initialize('UA-5407647-67')
 
@@ -18,9 +18,11 @@ const logPageView = () => {
 
 ReactDOM.render(
 	<BrowserRouter>
-		<App/>
+		<App />
 	</BrowserRouter>,
 	document.getElementById('main')
 )
 
-module.hot.accept();
+if (module.hot) {
+	module.hot.accept()
+}

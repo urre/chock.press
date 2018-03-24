@@ -1,5 +1,6 @@
 {
-		"name": "chockpress",
-		"alias": "chockpress",
-		"public": true
+	"name": "chockpress",
+	"alias": "chockpress",
+	"public": true,
+	"type": "static"
 }

@@ -24,11 +24,6 @@ module.exports = {
 		publicPath: '/',
 		filename: '[name].[hash].js'
 	},
-	plugins: [new webpack.HotModuleReplacementPlugin()],
-	devServer: {
-		contentBase: './build',
-		hot: true
-	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
