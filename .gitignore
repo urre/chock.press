@@ -1,8 +1,5 @@
 node_modules
 credentials.json
 build
-main.css.map
+data
 sendtogoogle.js
-aftonbladet.json
-expressen.json
-*.sh
