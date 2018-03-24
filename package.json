@@ -15,14 +15,9 @@
 		"start": "serve ./build",
 		"scrape": "cd src/scraper && babel-node scrape.js && babel-node match.js  && cd ../../ && cp -R ./src/data/ build/data",
 		"send": "cd src/scraper/helpers/ && babel-node sendtogoogle.js",
-		"now": "now ./build && now alias",
-		"publish": "npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
+		"now": "now --static --public ./build && now alias",
+		"publish": "clear && npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
 		"deploy": "npm run now"
-	},
-	"now": {
-		"name": "chock.press",
-		"alias": "chockpress",
-		"public": true
 	},
 	"devDependencies": {
 		"app-reset": "^1.0.2",
