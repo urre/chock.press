@@ -1,4 +1,6 @@
-## [Chockpress](https://chockpress.now.sh) 📰
+## [Chockpress](https://chockpress.now.sh)
+
+![](https://res.cloudinary.com/urre/image/upload/v1523543987/ubzm69mfxy8lswlaagwp.png)
 
 Having fun with Swedish evening news. The latest shocking headlines from Aftonbladet and Expressen.
 
