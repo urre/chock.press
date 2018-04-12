@@ -21,7 +21,8 @@
 		"clean": "cd ./build && rm -rf *.js && rm -rf index.html",
 		"publish":
 			"clear && npm run clean && npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
-		"now": "cp now.json ./build && cd build && now && now alias && now ls",
+		"now":
+			"cp now.json ./build && cd build && now && now alias && now ls --all chockpress",
 		"deploy": "npm run now"
 	},
 	"devDependencies": {

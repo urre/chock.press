@@ -26,13 +26,14 @@ Starts Webpack dev server at [localhost:8080](http://localhost:8080).
 
     yarn run deploy
 
-
-***
+---
 
 ### Details
 
-+ Scraper: Built using Node and vanilla JavaScript written in ES6.
-+ Website: Built using React.
-+ Hosted on [Now](https://zeit.co/now)
+* Scraper: Built using Node.js
+* Website: Built using React.js
+* Tooling: Webpack, Yarn, Babel
+* Database: Using Google Drive API to store headlines in a spreadsheet, for future use.
+* Hosted on [Now](https://zeit.co/now)
 
 Visit [Chockpress](https://chockpress.now.sh/)
