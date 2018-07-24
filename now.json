@@ -2,5 +2,6 @@
 	"name": "chockpress",
 	"alias": "chockpress",
 	"public": true,
-	"type": "static"
+	"type": "static",
+	"regions": ["bru"]
 }
