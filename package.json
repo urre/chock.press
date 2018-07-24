@@ -10,20 +10,16 @@
 		"url": "git://github.com/urre/chockpress.git"
 	},
 	"scripts": {
-		"develop":
-			"webpack-dev-server --config ./webpack.config.dev.js --mode development",
-		"build":
-			"NODE_ENV=production webpack --config ./webpack.config.prod.js --mode production",
+		"develop": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
+		"build": "NODE_ENV=production webpack --config ./webpack.config.prod.js --mode production",
 		"start": "serve ./build",
-		"scrape":
-			"cd src/scraper && babel-node scrape.js && babel-node match.js  && cd ../../ && cp -R ./src/data/ build/data",
+		"scrape": "cd src/scraper && babel-node scrape.js && babel-node match.js  && cd ../../ && cp -R ./src/data/ build/data",
 		"send": "cd src/scraper/helpers/ && babel-node sendtogoogle.js",
 		"clean": "cd ./build && rm -rf *.js && rm -rf index.html",
-		"publish":
-			"clear && npm run clean && npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
-		"now":
-			"cp now.json ./build && cd build && now && now alias && now ls --all chockpress",
-		"deploy": "npm run now"
+		"release": "clear && npm run clean && npm run build && npm run scrape && cp -R ./src/data/ build/data && npm run now && npm run send",
+		"now": "cp now.json ./build && cd build && now && now alias && now ls --all chockpress",
+		"deploy": "npm run now",
+		"remove": "now rm chockpress --safe --yes"
 	},
 	"devDependencies": {
 		"app-reset": "^1.0.2",
