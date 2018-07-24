@@ -20,11 +20,11 @@ const scrapeExpressen = () => {
 	sites.delayedForEach((urls, index) => {
 		scrapeIt(urls, {
 			articles: {
-				listItem: '.b-ateaser',
+				listItem: '.teaser',
 				data: {
-					title: '.teaser-component',
+					title: '.row h2',
 					url: {
-						selector: 'a',
+						selector: 'a.row',
 						attr: 'href'
 					}
 				}
