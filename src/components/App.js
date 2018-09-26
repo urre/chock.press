@@ -8,6 +8,7 @@ class App extends Component {
 		return (
 			<div className="container">
 				<main className="context">
+					<Aftonbladet />
 					<Expressen />
 				</main>
 				<Footer />
