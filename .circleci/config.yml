@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     docker:
@@ -34,15 +35,14 @@ jobs:
       - run: now -t ${NOW_TOKEN} alias chockpress
 
       - run: npm run save
-
-workflows:
-  version: 2
-  # nightly:
-  #   triggers:
-  #     - schedule:
-  #         # UTC 5:00 AM = EST 12:00 AM daily
-  #         cron: "0 5 * * *"
-  #         filters:
-  #           branches:
-  #             only:
-  #               - master
+# workflows:
+#   version: 2
+# nightly:
+#   triggers:
+#     - schedule:
+#         # UTC 5:00 AM = EST 12:00 AM daily
+#         cron: "0 5 * * *"
+#         filters:
+#           branches:
+#             only:
+#               - master
