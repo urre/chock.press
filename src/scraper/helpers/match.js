@@ -6,8 +6,6 @@ import words from './../../data/words.json'
 import aftonbladet from './../../data/aftonbladet.json'
 import expressen from './../../data/expressen.json'
 
-console.log(words)
-
 function multiDimensionalUnique(arr) {
 	var uniques = []
 	var itemsFound = {}

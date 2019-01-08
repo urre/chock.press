@@ -6,11 +6,11 @@ import scrapeAftonbladet from './helpers/scrape-aftonbladet'
 series(
 	[
 		done => {
-			scrapeExpressen()
+			scrapeAftonbladet()
 			done()
 		},
 		done => {
-			scrapeAftonbladet()
+			scrapeExpressen()
 			done()
 		}
 	],
