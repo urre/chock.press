@@ -2,5 +2,6 @@
 	"name": "chockpress",
 	"alias": "chockpress",
 	"version": 2,
-	"regions": ["bru"]
+	"regions": ["bru"],
+	"files": ["build"]
 }
