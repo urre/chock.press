@@ -1,4 +1,11 @@
 {
 	"name": "chockpress",
-	"alias": "chockpress"
+	"alias": "chockpress",
+	"version": 2,
+	"scale": {
+		"bru1": {
+			"min": 1,
+			"max": "auto"
+		}
+	}
 }
