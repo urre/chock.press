@@ -22,9 +22,9 @@ jobs:
           paths:
             - node_modules
 
-      - run: npm run clean
-
       - run: npm run build
+
+      - run: npm run clean
 
       - run: npm run scrape
 
