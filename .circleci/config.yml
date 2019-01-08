@@ -32,9 +32,9 @@ jobs:
 
       - run: cp -R ./src/data/ build/data
 
-      - run: now -t ${NOW_TOKEN}
+      - run: npx now -t ${NOW_TOKEN}
 
-      - run: now -t ${NOW_TOKEN} alias chockpress
+      - run: npx now -t ${NOW_TOKEN} alias chockpress
 
       - run: npm run save
 # workflows:

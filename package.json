@@ -46,6 +46,7 @@
 		"lodash": "^4.17.3",
 		"lowdb": "^1.0.0",
 		"mark.js": "github:julmot/mark.js",
+		"now": "^13.0.0",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2",
 		"react-ga": "^2.1.2",
