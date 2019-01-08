@@ -29,12 +29,9 @@ jobs:
       - run: npm run scrape
 
       - run: cp -R ./src/data/ build/data
-
-      - run: now -t ${NOW_TOKEN}
-
-      - run: now -t ${NOW_TOKEN} alias chockpress
-
-      - run: npm run save
+      # - run: now -t ${NOW_TOKEN}
+      # - run: now -t ${NOW_TOKEN} alias chockpress
+      # - run: npm run save
 # workflows:
 #   version: 2
 # nightly:

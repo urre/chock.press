@@ -1,4 +1,4 @@
-import GoogleSpreadsheet from 'google-spreadsheet'
+// import GoogleSpreadsheet from 'google-spreadsheet'
 import async from 'async'
 import ab from './../../data/af.json'
 import ex from './../../data/ex.json'
@@ -13,9 +13,9 @@ const db = low(adapter)
 
 db.defaults({ posts: [] }).write()
 
-const doc = new GoogleSpreadsheet(
-	'1uniZbthuqrdPDLfa-GjVNxi8Y6OVXEcbfValKPuaeuw'
-)
+// const doc = new GoogleSpreadsheet(
+// 	'1uniZbthuqrdPDLfa-GjVNxi8Y6OVXEcbfValKPuaeuw'
+// )
 
 var sheet
 
@@ -32,20 +32,20 @@ const send = (data, source) => {
 }
 
 async.series([
-	function setAuth(step) {
-		const creds = require('./credentials.json')
-		doc.useServiceAccountAuth(creds, step)
-	},
-	function listRows(step) {
-		doc.getInfo(function(err, info) {
-			console.log('Loaded doc: ' + info.title + ' by ' + info.author.email)
-			sheet = info.worksheets[0]
-			console.log(
-				'sheet 1: ' + sheet.title + ' ' + sheet.rowCount + 'x' + sheet.colCount
-			)
-			step()
-		})
-	},
+	// function setAuth(step) {
+	// 	const creds = require('./credentials.json')
+	// 	doc.useServiceAccountAuth(creds, step)
+	// },
+	// function listRows(step) {
+	// 	doc.getInfo(function(err, info) {
+	// 		console.log('Loaded doc: ' + info.title + ' by ' + info.author.email)
+	// 		sheet = info.worksheets[0]
+	// 		console.log(
+	// 			'sheet 1: ' + sheet.title + ' ' + sheet.rowCount + 'x' + sheet.colCount
+	// 		)
+	// 		step()
+	// 	})
+	// },
 	function backupExpressen(step) {
 		send(ex, 'Expressen')
 		step()
