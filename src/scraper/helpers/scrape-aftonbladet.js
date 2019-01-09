@@ -25,8 +25,6 @@ const scrapeAftonbladet = () => {
 			}
 		}).then(({ data, response }) => {
 			let file = path.join(__dirname, '../../data/aftonbladet.json')
-			console.log(data)
-			console.log(response)
 			fs.writeFile(file, JSON.stringify(data), function(err) {
 				if (err) {
 					return console.log(err)
