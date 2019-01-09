@@ -14,35 +14,50 @@ jobs:
           keys:
             - dependency-cache-{{ checksum "package.json" }}
             - dependency-cache-
-
-      - run: npm install
+      - run:
+          name: Install dependencies
+          command: npm install
 
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
 
-      - run: npm run build
+      - run:
+          name: Build
+          command: npm run build
 
-      - run: npm run scrape
+      - run:
+          name: Scrape
+          command: npm run scrape
 
-      - run: cd src && ls -al
+      - run:
+          name: Copy data to build folder
+          command: cp -R ./src/data/ build/data
 
-      - run: cp -R ./src/data/ build/data
+      - run:
+          name: Deploy on Zeit now
+          command: now -t ${NOW_TOKEN} ./build -A ../now.json
 
-      - run: npx now -t ${NOW_TOKEN}
+      - run:
+          name: Alias domain chockpress.now.sh
+          command: npx now -t ${NOW_TOKEN} alias chockpress
 
-      - run: npx now -t ${NOW_TOKEN} alias chockpress
+      - run:
+          name: Save data to database
+          command: npm run save
 
-      - run: npm run save
+      - run:
+          name: Push changes to repo
+          command: git add -A && git commit -m "Added new data" && git push origin dev
 # workflows:
 #   version: 2
 
 # nightly:
 #   triggers:
 #     - schedule:
-#         # UTC 5:00 AM = EST 12:00 AM daily
-#         cron: '0 5 * * *'
+#         # “At minute 0.”
+#         cron: '0 * * * *'
 #         filters:
 #           branches:
 #             only:
