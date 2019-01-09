@@ -57,10 +57,11 @@ jobs:
           path: ~/repo/db
           destination: db-file
 
-workflows:
-  version: 2
+commit-workflow:
+  jobs:
+    - build
 
-nightly:
+daily-workflow:
   triggers:
     - schedule:
         # Every hour. “At minute 0.”
