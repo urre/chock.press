@@ -48,7 +48,7 @@ jobs:
           command: npm run save
 
       - run:
-          name: Creating Dummy Artifacts
+          name: Store database file as artifact
           command: |
             mkdir ~/repo/db/;
             cp ./src/scraper/helpers/db.json ~/repo/db
@@ -56,13 +56,14 @@ jobs:
       - store_artifacts:
           path: ~/repo/db
           destination: db-file
+
 workflows:
   version: 2
 
 nightly:
   triggers:
     - schedule:
-        # “At minute 0.”
+        # Every hour. “At minute 0.”
         cron: '0 * * * *'
         filters:
           branches:
