@@ -50,11 +50,11 @@ jobs:
       - run:
           name: Creating Dummy Artifacts
           command: |
-            mkdir /repo/db/;
-            cp ./src/scraper/helpers/db.json /repo/db
+            mkdir ~/repo/db/;
+            cp ./src/scraper/helpers/db.json ~/repo/db
 
       - store_artifacts:
-          path: /repo/db
+          path: ~/repo/db
           destination: db-file
 # workflows:
 #   version: 2
