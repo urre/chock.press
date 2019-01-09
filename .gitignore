@@ -1,7 +1,5 @@
 node_modules
-credentials.json
 build
-sendtogoogle.js
 src/data/af.json
 src/data/ex.json
 src/data/aftonbladet.json
