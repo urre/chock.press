@@ -5,3 +5,4 @@ src/data/ex.json
 src/data/aftonbladet.json
 src/data/expressen.json
 credentials.json
+.env

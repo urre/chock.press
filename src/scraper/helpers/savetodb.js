@@ -4,9 +4,9 @@ import fs from 'fs'
 import ab from './../../data/af.json'
 import ex from './../../data/ex.json'
 
-const doc = new GoogleSpreadsheet(
-	'1uniZbthuqrdPDLfa-GjVNxi8Y6OVXEcbfValKPuaeuw'
-)
+require('dotenv').config()
+
+const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID)
 
 let sheet
 
@@ -19,15 +19,21 @@ const send = (data, source) => {
 				source: source,
 				url: data[key]['url']
 			},
-			function(err, rows) {}
+			function(err, rows) {
+				console.log(err)
+			}
 		)
 	}
 }
 
 async.series([
 	function setAuth(step) {
-		const creds = require('./credentials.json')
-		doc.useServiceAccountAuth(creds, step)
+		var creds_json = {
+			client_email: process.env.GOOGLE_CLIENT_EMAIL,
+			private_key: process.env.GOOGLE_PRIVATE_KEY
+		}
+
+		doc.useServiceAccountAuth(creds_json, step)
 	},
 	function listRows(step) {
 		doc.getInfo(function(err, info) {
