@@ -43,18 +43,8 @@ jobs:
           command: npx now -t ${NOW_TOKEN} alias chockpress
 
       - run:
-          name: Save data to database
+          name: Save data to Google Sheet
           command: npm run save
-
-      - run:
-          name: Store database file as artifact
-          command: |
-            mkdir ~/repo/db/;
-            cp ./src/scraper/helpers/db.json ~/repo/db
-
-      - store_artifacts:
-          path: ~/repo/db
-          destination: db-file
 
 workflows:
   version: 2
