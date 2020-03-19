@@ -18,10 +18,7 @@
 		"copydata": "cp -R ./src/data/ build/data",
 		"scrape": "npm run collect && npm run match && npm run copydata",
 		"save": "cd src/scraper/helpers/ && npx babel-node savetodb.js",
-		"clean": "cd ./build && rm -rf *.js && rm -rf index.html",
-		"release": "clear && npm run clean && npm run build && npm run scrape && npm run copydata && npm run now && npm run save",
-		"now": "now ./build -A ../now.json && now alias && now ls --all chockpress",
-		"now:remove": "now rm chockpress --safe --yes"
+		"clean": "cd ./build && rm -rf *.js && rm -rf index.html"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.2.3",
