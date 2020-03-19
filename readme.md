@@ -4,23 +4,23 @@ Having fun with Swedish evening news. The latest shocking headlines from Aftonbl
 
 ### Scraping and matching
 
-    yarn run scrape
+    npm run scrape
 
 For scraping and matching news headings.
 
 ### Run
 
-    yarn run develop
+    npm run develop
 
 Starts Webpack dev server at [localhost:8080](http://localhost:8080).
 
 ### Build for production
 
-    yarn run build
+    npm run build
 
-### Release (scrape, build and deploy)
+### Deploy
 
-    yarn run release
+    git push
 
 ### Deployment
 
