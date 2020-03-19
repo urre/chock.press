@@ -1,7 +1,14 @@
 {
-	"name": "chockpress",
-	"alias": "chockpress",
 	"version": 2,
-	"regions": ["bru"],
-	"files": ["build"]
+	"name": "chockpress",
+	"alias": ["chockpress.now.sh"],
+	"public": true,
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/static-build",
+			"config": { "distDir": "build" }
+		}
+	],
+	"regions": ["arn1", "bru"]
 }
