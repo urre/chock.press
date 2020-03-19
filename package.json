@@ -28,7 +28,7 @@
 		"@babel/preset-react": "^7.0.0",
 		"app-reset": "^1.0.2",
 		"async-series": "0.0.1",
-		"axios": "^0.18.0",
+		"axios": "^0.18.1",
 		"babel-loader": "^8.0.0-beta.6",
 		"chalk": "^2.4.1",
 		"concat-files": "^0.1.0",
