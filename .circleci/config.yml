@@ -36,11 +36,11 @@ jobs:
 
       - run:
           name: Deploy on Zeit now
-          command: npx now -t ${NOW_TOKEN} ./build -A ../now.json
+          command: npx now --prod -t ${NOW_TOKEN} ./build -A ../now.json
 
       - run:
           name: Alias domain chockpress.now.sh
-          command: npx now -t ${NOW_TOKEN} alias chockpress
+          command: npx now --prod -t ${NOW_TOKEN} alias chockpress
 
       - run:
           name: Save data to Google Sheet
