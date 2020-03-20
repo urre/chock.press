@@ -36,7 +36,7 @@ jobs:
 
       - run:
           name: Deploy on Zeit now
-          command: npx now -t ${NOW_TOKEN} ./build -A ../now.json
+          command: npx now -t ${NOW_TOKEN} ${CIRCLE_WORKING_DIRECTORY}/build -A ../now.json
 
       - run:
           name: Alias domain chockpress.now.sh
