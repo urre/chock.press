@@ -28,11 +28,11 @@ jobs:
 
       - run:
           name: Collect data
-          command: cd src/scraper && npx babel-node scrape.js",
+          command: cd src/scraper && npx babel-node scrape.js
 
       - run:
           name: Match words
-          command: cd src/scraper && npx babel-node match.js",
+          command: cd src/scraper && npx babel-node match.js
 
       - run:
           name: Copy data to build folder
