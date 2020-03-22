@@ -41,8 +41,7 @@ jobs:
       - run:
           name: Deploy on Zeit now
           command: |
-            sudo npm install now --yes -g
-            now --prod -t ${NOW_TOKEN}
+            sudo npm install now -g -y
 
       - run:
           name: Save data to the Google Sheet
