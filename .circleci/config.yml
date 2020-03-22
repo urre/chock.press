@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Deploy on Zeit now
           command: |
-            sudo npm install now -g
+            sudo npm install now --yes -g
             now --prod -t ${NOW_TOKEN}
 
       - run:
