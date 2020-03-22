@@ -39,9 +39,12 @@ jobs:
           command: cp -R src/data/ build/data
 
       - run:
+          name: Install now-cli
+          command: sudo npm install now -g -y
+
+      - run:
           name: Deploy on Zeit now
-          command: |
-            sudo npm install now -g -y
+          command: now --prod -t ${NOW_TOKEN} --local-config ${CIRCLE_WORKING_DIRECTORY}/now.json
 
       - run:
           name: Save data to the Google Sheet
