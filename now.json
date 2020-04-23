@@ -1,6 +1,5 @@
 {
 	"version": 2,
-	"name": "chockpress",
 	"alias": ["chockpress.now.sh"],
 	"public": true,
 	"builds": [
