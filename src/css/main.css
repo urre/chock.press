@@ -14,13 +14,7 @@ a {
 	color: inherit;
 }
 
-html {
-	min-height: 100vh;
-	height: 100%;
-}
-
 body {
-	height: 100vh;
 	font-size: 100%;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
 		Helvetica Neue, Helvetica, sans-serif;
@@ -70,7 +64,6 @@ Start App
 
 .col {
 	width: 100%;
-	min-height: 100vh;
 	padding: 1.25rem;
 	position: relative;
 }
@@ -93,7 +86,7 @@ Start App
 }
 
 .count {
-	box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 0.1rem 0.1rem white;
 	display: flex;
 	position: absolute;
 	align-items: center;
@@ -102,10 +95,19 @@ Start App
 	right: 45%;
 	background-color: red;
 	border-radius: 100%;
-	height: 2em;
-	width: 2em;
+	height: 40px;
+	width: 40px;
+	font-size: 1.25rem;
 	text-align: center;
 	color: white;
+}
+
+@media (min-width: 800px) {
+	.count {
+		height: 60px;
+		width: 60px;
+		font-size: 1.5rem;
+	}
 }
 
 .col svg {
@@ -161,19 +163,20 @@ Start App
 }
 
 .footer {
-	clear: both;
-	padding: 2rem;
-	font-size: 0.85rem;
-	text-align: center;
+	padding: 4rem 3rem;
 	color: #666;
 }
 
+.footer p {
+	font-size: 0.75rem;
+}
+
 .footer a {
-	color: tomato;
+	color: #0074b7;
 }
 
 .footer a:hover {
-	color: #333;
+	color: blue;
 }
 
 mark {

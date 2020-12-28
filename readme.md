@@ -1,4 +1,6 @@
-## [Chockpress](https://chockpress.now.sh)
+## [Chockpress →](https://chockpress.urre.vercel.app)
+
+[![CircleCI](https://circleci.com/gh/urre/chock.press.svg?style=svg)](https://circleci.com/gh/urre/chock.press)
 
 Having fun with Swedish evening news. The latest shocking headlines from Aftonbladet and Expressen.
 
@@ -18,16 +20,12 @@ Starts Webpack dev server at [localhost:8080](http://localhost:8080).
 
     npm run build
 
-### Deploy
-
-    git push
-
 ### Deployment
 
-Circle CI will automatically build, scrape and deploy this website everyday at 15.00
+Circle CI will automatically build, scrape and deploy this website everyday at 14.00
 
-[![CircleCI](https://circleci.com/gh/urre/chock.press.svg?style=svg)](https://circleci.com/gh/urre/chock.press)
+### Deploy manually
+
+    npx vercel --prod
 
 ---
-
-Visit [Chockpress](https://chockpress.now.sh/)
