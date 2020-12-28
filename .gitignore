@@ -6,3 +6,4 @@ src/data/aftonbladet.json
 src/data/expressen.json
 credentials.json
 .env
+.vercel

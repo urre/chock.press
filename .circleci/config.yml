@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Deploy on Zeit now
-          command: npx now --prod -t ${NOW_TOKEN} --confirm --local-config ${CIRCLE_WORKING_DIRECTORY}/now.json
+          command: vercel --prod --token ${VERCEL_TOKEN}
 
       - run:
           name: Save data to the Google Sheet
