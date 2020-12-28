@@ -68,16 +68,14 @@ Start App
 	position: relative;
 }
 
-@media (min-width: 800px) {
-	.col {
-		padding: 3rem;
-	}
+.context {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
 }
 
 @media (min-width: 800px) {
 	.col {
-		float: left;
-		width: 50%;
+		padding: 3rem;
 	}
 }
 
