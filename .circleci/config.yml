@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Deploy on Zeit now
-          command: npx vercel --prod --token ${VERCEL_TOKEN}
+          command: npx vercel --prod --debug --token ${VERCEL_TOKEN}
 
       - run:
           name: Save data to the Google Sheet
