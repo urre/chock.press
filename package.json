@@ -59,5 +59,8 @@
 		"webpack-dev-server": "^3.11.0",
 		"whatwg-fetch": "^3.0.0",
 		"x-ray": "^2.3.4"
+	},
+	"dependencies": {
+		"vercel": "^21.0.1"
 	}
 }
