@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node@14.8.0
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -22,29 +22,29 @@ jobs:
       #     paths:
       #       - node_modules
 
-      - run:
-          name: Build
-          command: npm run build
+      # - run:
+      #     name: Build
+      #     command: npm run build
 
-      - run:
-          name: Collect data
-          command: cd src/scraper && npx babel-node scrape.js
+      # - run:
+      #     name: Collect data
+      #     command: cd src/scraper && npx babel-node scrape.js
 
-      - run:
-          name: Match words
-          command: cd src/scraper && npx babel-node match.js
+      # - run:
+      #     name: Match words
+      #     command: cd src/scraper && npx babel-node match.js
 
-      - run:
-          name: Copy data to build folder
-          command: cp -R src/data/ build/data
+      # - run:
+      #     name: Copy data to build folder
+      #     command: cp -R src/data/ build/data
 
-      - run:
-          name: Deploy on Zeit now
-          command: vercel --prod --token ${VERCEL_TOKEN}
+      # - run:
+      #     name: Deploy on Zeit now
+      #     command: vercel --prod --token ${VERCEL_TOKEN}
 
-      - run:
-          name: Save data to the Google Sheet
-          command: npm run save
+      # - run:
+      #     name: Save data to the Google Sheet
+      #     command: npm run save
 
 workflows:
   version: 2
