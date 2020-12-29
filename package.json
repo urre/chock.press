@@ -12,6 +12,7 @@
 	"scripts": {
 		"develop": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
 		"build": "NODE_ENV=production webpack --config ./webpack.config.prod.js --mode production",
+		"deploy": "vercel --prod",
 		"start": "serve ./build",
 		"scrape": "npm run collect && npm run match && npm run copydata",
 		"collect": "cd src/scraper && npx babel-node scrape.js",
