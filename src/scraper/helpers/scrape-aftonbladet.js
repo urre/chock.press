@@ -4,28 +4,24 @@ import scrapeIt from 'scrape-it'
 import path from 'path'
 import _ from 'lodash'
 
-const sites = [
-	'http://www.aftonbladet.se',
-	'http://www.aftonbladet.se/nojesbladet'
-]
+const sites = ['https://aftonbladet.se', 'https://aftonbladet.se/nojesbladet']
 
 const scrapeAftonbladet = () => {
 	for (let site of sites) {
-		console.log(site)
 		scrapeIt(site, {
 			articles: {
-				listItem: site.includes('nojesbladet') ? 'div' : 'div',
+				listItem: '.HLf1C',
 				data: {
-					title: site.includes('nojesbladet') ? 'h3' : 'h3',
+					title: 'h3',
 					url: {
 						selector: 'a',
-						attr: 'href'
-					}
-				}
-			}
+						attr: 'href',
+					},
+				},
+			},
 		}).then(({ data, response }) => {
 			let file = path.join(__dirname, '../../data/aftonbladet.json')
-			fs.writeFile(file, JSON.stringify(data), function(err) {
+			fs.writeFile(file, JSON.stringify(data), function (err) {
 				if (err) {
 					return console.log(err)
 				}
