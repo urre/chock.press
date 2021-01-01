@@ -39,8 +39,12 @@ jobs:
           command: cp -R src/data/ build/data
 
       - run:
-          name: Deploy on Zeit now
+          name: Deploy on Vercel
           command: npx vercel --prod --debug --confirm --token ${VERCEL_TOKEN}
+
+      - run:
+          name: Tweet
+          command: node bot.js
 
       - run:
           name: Save data to the Google Sheet
