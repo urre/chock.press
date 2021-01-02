@@ -28,4 +28,10 @@ Circle CI will automatically build, scrape and deploy this website everyday at 1
 
     npx vercel --prod
 
+### It Tweets!
+
+Tweets daily at 14 over at [@chockpress_bot](https://mobile.twitter.com/chockpress_bot)
+
+![](https://res.cloudinary.com/urre/image/upload/v1609578191/screenshots/nqebvelkh6shrw8bdxnp.jpg)
+
 ---
