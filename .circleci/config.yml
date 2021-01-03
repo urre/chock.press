@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Add dynamic Open Graph image
-          command: node dynamic-image.js
+          command: node dynamic-og.js
 
       - run:
           name: Deploy on Vercel
