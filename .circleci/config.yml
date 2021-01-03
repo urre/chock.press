@@ -38,9 +38,9 @@ jobs:
           name: Copy data to build folder
           command: cp -R src/data/ build/data
 
-      - run:
-          name: Add dynamic Open Graph image
-          command: node dynamic-og.js
+      # - run:
+      #     name: Add dynamic Open Graph image
+      #     command: node dynamic-og.js
 
       - run:
           name: Deploy on Vercel

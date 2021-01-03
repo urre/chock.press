@@ -20,6 +20,13 @@ const removeLines = (data, lines = []) => {
 }
 
 const insertLines = () => {
+	const score = getStats()
+	const ogImage = `https://res.cloudinary.com/urre/image/upload/b_red,co_white,l_text:Arial_148_bold:%20${score}%20,g_south_east,y_50/v1609240655/chockpress-og_ejo8kf.jpg`
+	const OpenGraphImageTag = `\t<meta name="og:image" content="${ogImage}">\n`
+	const TwitterCardImageTag = `\t<meta name="twitter:image" content="${ogImage}">`
+
+	log(`${chalk.green(`✅ Fetched stats : ${score}`)}`)
+
 	insertLine(`${htmlFile}`)
 		.content(`${OpenGraphImageTag}${TwitterCardImageTag}`)
 		.at(22)
@@ -32,17 +39,12 @@ const insertLines = () => {
 		})
 }
 
-const score = getStats()
-const ogImage = `https://res.cloudinary.com/urre/image/upload/b_red,co_white,l_text:Arial_148_bold:%20${score}%20,g_south_east/v1609240655/chockpress-og_ejo8kf.jpg`
-const OpenGraphImageTag = `\t<meta name="og:image" content="${ogImage}">\n`
-const TwitterCardImageTag = `\t<meta name="twitter:image" content="${ogImage}">`
-
 fs.readFile(htmlFile, 'utf8', (err, data) => {
 	if (err) throw err
 
 	fs.writeFile(htmlFile, removeLines(data, [21, 22]), 'utf8', function (err) {
 		if (err) throw err
-		log(`${chalk.yellow(`⚠️ Removed lines`)}`)
+		log(`${chalk.green(`✅ Removed previous meta tag lines in the html file`)}`)
 		insertLines()
 	})
 })
