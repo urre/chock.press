@@ -46,7 +46,7 @@
 		"lodash": "^4.17.20",
 		"lowdb": "^1.0.0",
 		"mark.js": "github:julmot/mark.js",
-		"node-fetch": "^1.6.3",
+		"node-fetch": "^2.6.1",
 		"node-twitterbot": "^0.2.2",
 		"now": "^17.1.1",
 		"react": "^16.13.1",
