@@ -39,6 +39,10 @@ jobs:
           command: cp -R src/data/ build/data
 
       - run:
+          name: Add dynamic Open Graph image
+          command: node dynamic-image.js
+
+      - run:
           name: Deploy on Vercel
           command: npx vercel --prod --debug --confirm --token ${VERCEL_TOKEN}
 
