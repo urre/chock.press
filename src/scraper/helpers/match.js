@@ -20,17 +20,22 @@ function multiDimensionalUnique(arr) {
 	return uniques
 }
 
-const match = source => {
+const match = (source) => {
 	let results = []
 	let obj
 
-	words.forEach(function(val, index, arr) {
+	words.forEach(function (val, index, arr) {
 		obj = _(source == 'aftonbladet' ? aftonbladet.articles : expressen.articles)
-			.filter(function(s) {
+			.filter(function (s) {
 				if (s.title) {
 					s.title = clean(s.title)
 					if (s.title.includes(val) && s.url && s.title.length < 200) {
-						console.log('👍 ' + source + ': ' + s.title)
+						if (source === 'aftonbladet') {
+							console.log('🟢 ' + source + ': ' + s.title)
+						} else {
+							console.log('🟡 ' + source + ': ' + s.title)
+						}
+
 						return JSON.stringify(s)
 					}
 				}

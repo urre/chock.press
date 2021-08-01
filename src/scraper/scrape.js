@@ -5,14 +5,14 @@ import scrapeAftonbladet from './helpers/scrape-aftonbladet'
 
 series(
 	[
-		done => {
+		(done) => {
 			scrapeAftonbladet()
 			done()
 		},
-		done => {
+		(done) => {
 			scrapeExpressen()
 			done()
-		}
+		},
 	],
-	function(err) {}
+	function (err) {}
 )
