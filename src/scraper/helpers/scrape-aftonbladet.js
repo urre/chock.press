@@ -1,6 +1,5 @@
 import chalk from 'chalk'
 import fs from 'fs'
-import scrapeIt from 'scrape-it'
 import path from 'path'
 import _ from 'lodash'
 let Parser = require('rss-parser')
