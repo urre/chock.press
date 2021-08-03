@@ -2,7 +2,6 @@
 
 const Twit = require('twit')
 const TwitterBot = require('node-twitterbot').TwitterBot
-const fetch = require('node-fetch')
 
 require('dotenv').config()
 
