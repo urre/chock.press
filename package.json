@@ -19,7 +19,8 @@
 		"match": "cd src/scraper && npx babel-node match.js",
 		"copydata": "cp -R ./src/data/ build/data",
 		"save": "cd src/scraper/helpers/ && npx babel-node savetodb.js",
-		"clean": "cd ./build && rm -rf *.js && rm -rf index.html"
+		"clean": "cd ./build && rm -rf *.js && rm -rf index.html",
+		"tweet": "node bot.js"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.8.4",
