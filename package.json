@@ -30,7 +30,7 @@
 		"@babel/preset-react": "^7.9.4",
 		"app-reset": "^1.0.2",
 		"async-series": "0.0.1",
-		"axios": "^0.18.1",
+		"axios": "^0.21.2",
 		"babel-loader": "^8.1.0",
 		"chalk": "^2.4.2",
 		"concat-files": "^0.1.0",
