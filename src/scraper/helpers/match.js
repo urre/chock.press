@@ -29,7 +29,7 @@ const match = (source) => {
 			.filter(function (s) {
 				if (s.title) {
 					s.title = clean(s.title)
-					if (s.title.includes(val) && s.url && s.title.length < 200) {
+					if (s.title.toLowerCase().includes(val.toLowerCase()) && s.url) {
 						if (source === 'aftonbladet') {
 							console.log('🟢 ' + source + ': ' + s.title)
 						} else {

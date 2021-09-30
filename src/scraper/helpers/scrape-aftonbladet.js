@@ -7,7 +7,7 @@ let parser = new Parser()
 
 const scrapeAftonbladet = async () => {
 	let feed = await parser.parseURL(
-		'https://rss.aftonbladet.se/rss2/small/pages/sections/senastenytt/'
+		'https://rss.aftonbladet.se/rss2/small/pages/sections/nojesbladet/'
 	)
 
 	let articleObject = {
